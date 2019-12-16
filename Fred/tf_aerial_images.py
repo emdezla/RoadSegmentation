@@ -5,7 +5,7 @@ This simple baseline consits of a CNN with two convolutional+pooling layers with
 Credits: Aurelien Lucchi, ETH Zürich
 
 This was last tested with TensorFlow 1.13.2, which is not completely up to date.
-To 'downgrade': pip install --upgrade tensorflow==1.13.2
+To 'downgrade': 
 """
 
 import gzip
@@ -39,8 +39,7 @@ RECORDING_STEP = 0
 IMG_PATCH_SIZE = 16
 
 tf.app.flags.DEFINE_string('train_dir', '/tmp/segment_aerial_images',
-                           """Directory where to write event logs """
-                           """and checkpoint.""")
+                           """Directory where to write event logs and checkpoint.""")
 FLAGS = tf.app.flags.FLAGS
 
 
@@ -424,6 +423,7 @@ def main(argv=None):  # pylint: disable=unused-argument
     # Optimizer: set up a variable that's incremented once per batch and
     # controls the learning rate decay.
     batch = tf.Variable(0)
+    
     # Decay once per epoch, using an exponential schedule starting at 0.01.
     learning_rate = tf.train.exponential_decay(
         0.01,                # Base learning rate.
@@ -435,9 +435,7 @@ def main(argv=None):  # pylint: disable=unused-argument
     tf.summary.scalar('learning_rate', learning_rate)
     
     # Use simple momentum for the optimization.
-    optimizer = tf.train.MomentumOptimizer(learning_rate,
-                                           0.0).minimize(loss,
-                                                         global_step=batch)
+    optimizer = tf.train.MomentumOptimizer(learning_rate, 0.0).minimize(loss, global_step=batch)
 
     # Predictions for the minibatch, validation set and test set.
     train_prediction = tf.nn.softmax(logits)
@@ -461,8 +459,7 @@ def main(argv=None):  # pylint: disable=unused-argument
 
             # Build the summary operation based on the TF collection of Summaries.
             summary_op = tf.summary.merge_all()
-            summary_writer = tf.summary.FileWriter(FLAGS.train_dir,
-                                                   graph=s.graph)
+            summary_writer = tf.summary.FileWriter(FLAGS.train_dir, graph=s.graph)
 
             print('Initialized!')
             # Loop through training steps.
