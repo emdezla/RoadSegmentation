@@ -52,3 +52,17 @@ def img_crop(im, w, h):
                 im_patch = im[j:j+w, i:i+h, :]
             list_patches.append(im_patch)
     return list_patches
+
+def TruePositiveRate(X, Y, model):
+    """Compute the true positive rate of the lgistic regression model logregModel on 
+       the training augmented data tX.
+    """
+    # Predict on the training set
+    Y_pred = np.argmax(model.predict(X),axis=1)
+    
+    # Get non-zeros in prediction and grountruth arrays
+    Y_predn = np.nonzero(Y_pred)[0]
+    Yn = np.nonzero(Y)[0]
+
+    TPR = len(list(set(Yn) & set(Y_predn))) / float(len(Yn))
+    return TPR
