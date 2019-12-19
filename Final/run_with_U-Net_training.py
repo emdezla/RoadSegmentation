@@ -3,6 +3,19 @@
 
 from image_processing import *
 
+SEED = 1642
+PATCH_SIZE = 16
+NUMBER_TRAIN_IMG = 100 # max 100
+ROOT = './'
+DATA_ROOT_DIR = ROOT+ "Datasets/"
+SUBMISSION_DIR = ROOT + "Submissions/"
+PREDICTION_DIR = ROOT + "Predictions/"
+CHECKPOINT_DIR = ROOT + 'Checkpoints/'
+NB_CLASSES = 2
+NB_EPOCHS = 200
+BATCH_SIZE = 20
+FOREGROUND_THRESHOLD = 0.25
+FOREGROUND_THRESHOLD_R = 0.25 # for recontruction
 
 """1) Loading the set of images"""
 
@@ -124,7 +137,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 
 model.summary()
 
-checkpoint = ModelCheckpoint(CHECKPOINT_DIR + 'UNET_V2.hdf5', monitor='val_acc', verbose=1, save_best_only=True, mode='auto', period=1)
+checkpoint = ModelCheckpoint(CHECKPOINT_DIR + 'modelUNET.h5', monitor='val_acc', verbose=1, save_best_only=True, mode='auto', period=1)
 
 """### 4) CNN model training and testing"""
 
