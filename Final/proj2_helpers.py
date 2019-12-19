@@ -22,7 +22,6 @@ def img_float_to_uint8(img):
     rimg = (rimg / np.max(rimg) * 255).round().astype(np.uint8)
     return rimg
 
-# Concatenate an image and its groundtruth
 def concatenate_images(img, gt_img):
     nChannels = len(gt_img.shape)
     w = gt_img.shape[0]
@@ -39,16 +38,26 @@ def concatenate_images(img, gt_img):
         cimg = np.concatenate((img8, gt_img_3c), axis=1)
     return cimg
 
-def img_crop(im, w, h):
+def img_crop(im, w, h, c=0):
+    """ Personalized version of the img_crop incorporating the option of getting the context (c) around the patches"""
     list_patches = []
     imgwidth = im.shape[0]
     imgheight = im.shape[1]
     is_2d = len(im.shape) < 3
-    for i in range(0,imgheight,h):
-        for j in range(0,imgwidth,w):
+    
+    # padding the image to access the context of border patches
+    if is_2d:
+        pad_im = np.pad(im,((c,c),(c,c)), 'reflect')
+    else:
+        pad_im = np.pad(im,((c,c),(c,c),(0,0)), 'reflect')
+
+    # cropping the image
+    for i in range(c,imgheight+c,h):
+        for j in range(c,imgwidth+c,w):
             if is_2d:
-                im_patch = im[j:j+w, i:i+h]
+                im_patch = pad_im[j-c:(j+w)+c, i-c:(i+h)+c]
             else:
-                im_patch = im[j:j+w, i:i+h, :]
+                im_patch = pad_im[j-c:(j+w)+c, i-c:(i+h)+c, :]
+
             list_patches.append(im_patch)
     return list_patches
