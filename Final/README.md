@@ -30,7 +30,7 @@ The model has been trained using Google Colab, a similar environment to Jupyter-
 
 The following external libraries must be installed to run the project:
 
-- Keras (running on top of TensorFlow): deep learning library used for designing our neural networks
+- Keras (running on top of TensorFlow version 1.14 and above): deep learning library used for designing our neural networks
 - OpenCV: Computer vision library used for image feature extraction
 
 
