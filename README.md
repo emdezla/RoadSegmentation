@@ -3,7 +3,7 @@
 
 This project presents and explores three different machine learning approaches in order to perform an image segmentation task on satellite images for distinguishing the road. In other words, a binary classifier is implemented in three different ways (Logistic Regression, Convolutional Neural Network and U-net Neural Netwrok) so that it labels each pixel as road or background. 
 
-The dataset was downloaded from [AICrowd page](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/dataset_files) and our best machine learning approach (U-net neural network) achieved a F1 score of 0.9, which shows the potential of deep learning techniques for image segmentation.
+The dataset was downloaded from [AICrowd Road Segmentation Challenge](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/) and our best machine learning approach (U-net neural network) achieved a F1 score of 0.9, which shows the potential of deep learning techniques for image segmentation.
 
 
 ### Description of the files
@@ -16,11 +16,12 @@ We have implemented three models on different Jupyter notebooks and a final scri
 + `run.py`:  Script that directly loads the U-net model from `modelUNET.h5` and performs classification on the test set. If one wants to train the model instead of loading it, the TRAIN variable in the `run.py` file can be set to True. By default, it is set to False.
 
 There are also the following folders:
-+ `Datasets`: Cointains the training and the testing data.
-+ `Predictions`: Contains the predicted masks.
-+ `Submissions`: Contains subfolders (named after the hour/date they were created) and these subfolders cointain the submission file as well as the model that resulted in this submission. A new subfolder is created each time a submission is created, except for le logistic regression submission, for which only the submission file is saved.
-+ `Checkpoints`: Contains the checkpoints of the model that is being trained, for safe keeping.
 + `Experimentation`: Contains several notebooks where we tried different models and parameters
++ `Datasets`: Cointains the training and the testing data (must be download from [AICrowd](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/dataset_files)
++ `Predictions`: Contains the predicted masks (empty before running)
++ `Submissions`: Contains subfolders (named after the hour/date they were created) and these subfolders cointain the submission file as well as the model that resulted in this submission. A new subfolder is created each time a submission is created, except for le logistic regression submission, for which only the submission file is saved (empty before running)
++ `Checkpoints`: Contains the checkpoints of the model that is being trained, for safe keeping (empty before running)
+
 
 ### Setup
 
