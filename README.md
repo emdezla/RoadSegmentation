@@ -17,7 +17,7 @@ We have implemented three models on different Jupyter notebooks and a final scri
 
 There are also the following folders:
 + `Experimentation`: Contains several notebooks where we tried different models and parameters
-+ `Datasets`: Cointains the training and the testing data (must be download from [AICrowd](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/dataset_files)
++ `Datasets`: Cointains the training and the testing data (must be downloaded from [AICrowd](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/dataset_files))
 + `Predictions`: Contains the predicted masks (empty before running)
 + `Submissions`: Contains subfolders (named after the hour/date they were created) and these subfolders cointain the submission file as well as the model that resulted in this submission. A new subfolder is created each time a submission is created, except for le logistic regression submission, for which only the submission file is saved (empty before running)
 + `Checkpoints`: Contains the checkpoints of the model that is being trained, for safe keeping (empty before running)
