@@ -3,7 +3,7 @@
 
 This project presents and explores three different machine learning approaches in order to perform an image segmentation task on satellite images for distinguishing the road. In other words, a binary classifier is implemented in three different ways (Logistic Regression, Convolutional Neural Network and U-net Neural Netwrok) so that it labels each pixel as road or background. 
 
-The dataset was downloaded from [CrowdAI page](https://www.crowdai.org/challenges/epfl-ml-road-segmentation) and our best machine learning approach (U-net neural network) achieved a F1 score of 0.9, which shows the potential of deep learning techniques for image segmentation.
+The dataset was downloaded from [AICrowd page](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/dataset_files) and our best machine learning approach (U-net neural network) achieved a F1 score of 0.9, which shows the potential of deep learning techniques for image segmentation.
 
 
 ### Description of the files
@@ -27,7 +27,6 @@ The folders and files are:
 ### Setup
 
 The model has been trained using Google Colab, a similar environment to Jupyter-Lab, but providing a free Tesla K80 GPU to run on the cloud, which accelerates substantially the model training. Python 3 must be installed in order to run this code.
-
 Additionally, the following external libraries must be installed to run the project:
 
 - Keras (running on top of TensorFlow version 1.14 and above): deep learning library used for designing our neural networks
