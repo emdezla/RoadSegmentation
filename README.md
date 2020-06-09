@@ -5,7 +5,8 @@ This project presents and explores three different machine learning approaches i
 
 The dataset was downloaded from [AICrowd Road Segmentation Challenge](https://www.aicrowd.com/challenges/epfl-ml-road-segmentation-2019/) and our best machine learning approach (U-net neural network) achieved a F1 score of 0.9, which shows the potential of deep learning techniques for image segmentation.
 
-![Satellite image and corresponding groundtruth](https://https://github.com/emdezla/projetRoadSegmentation/blob/master/ImgAndGt.png)
+![Satellite image and corresponding groundtruth](ImgAndGt.png)
+
 ### Description of the files
 
 We have implemented three models on different Jupyter notebooks and a final script that loads directly the best model :
