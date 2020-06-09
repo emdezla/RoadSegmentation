@@ -20,6 +20,7 @@ There are also the following folders:
 + `Predictions`: Contains the predicted masks.
 + `Submissions`: Contains subfolders (named after the hour/date they were created) and these subfolders cointain the submission file as well as the model that resulted in this submission. A new subfolder is created each time a submission is created, except for le logistic regression submission, for which only the submission file is saved.
 + `Checkpoints`: Contains the checkpoints of the model that is being trained, for safe keeping.
++ `Experimentation`: Contains several notebooks where we tried different models and parameters
 
 ### Setup
 
